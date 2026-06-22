@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asad Jafri — Software Engineer</title>
+<meta name="description" content="Asad Jafri — Software Engineering student, competitive programmer, and full-stack developer.">
+<style>
+  :root{
+    --bg:#0a0e1a;
+    --bg-card:#111726;
+    --bg-card-2:#161d30;
+    --accent:#6366f1;
+    --accent-2:#22d3ee;
+    --text:#e6eaf2;
+    --text-dim:#9aa4b8;
+    --border:rgba(255,255,255,0.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(10,14,26,0.7);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:700;font-size:1.2rem;letter-spacing:.5px}
+  .logo span{color:var(--accent-2)}
+  .nav-links{display:flex;gap:28px}
+  .nav-links a{color:var(--text-dim);font-size:.95rem;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+  /* HERO */
+  header{
+    min-height:100vh;display:flex;align-items:center;
+    padding-top:64px;position:relative;
+    background:radial-gradient(circle at 70% 30%, rgba(99,102,241,0.15), transparent 50%),
+               radial-gradient(circle at 20% 80%, rgba(34,211,238,0.1), transparent 50%);
+  }
+  .hero{display:flex;align-items:center;gap:60px;flex-wrap:wrap}
+  .hero-text{flex:1;min-width:300px}
+  .hero-text .badge{
+    display:inline-block;padding:6px 14px;border:1px solid var(--border);
+    border-radius:999px;font-size:.8rem;color:var(--accent-2);margin-bottom:20px;
+    background:var(--bg-card);
+  }
+  .hero-text h1{font-size:3.2rem;line-height:1.1;margin-bottom:16px;font-weight:800}
+  .hero-text h1 .grad{
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-text p{color:var(--text-dim);font-size:1.1rem;max-width:520px;margin-bottom:28px}
+  .btn-group{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    padding:12px 26px;border-radius:10px;font-weight:600;font-size:.95rem;
+    transition:transform .15s,box-shadow .15s;cursor:pointer;border:none;
+  }
+  .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0a0e1a}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(99,102,241,.4)}
+  .btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+  .btn-outline:hover{border-color:var(--accent-2);color:var(--accent-2)}
+
+  .hero-img{flex-shrink:0}
+  .hero-img .frame{
+    width:300px;height:360px;border-radius:20px;overflow:hidden;
+    border:1px solid var(--border);position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+  }
+  .hero-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+  .hero-img .frame::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 60%,rgba(10,14,26,.4));
+  }
+
+  /* SECTIONS */
+  section{padding:90px 0}
+  .section-title{font-size:2rem;font-weight:700;margin-bottom:8px;text-align:center}
+  .section-title span{color:var(--accent-2)}
+  .section-sub{text-align:center;color:var(--text-dim);margin-bottom:48px}
+
+  /* ACHIEVEMENTS */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+  .stat-card{
+    background:var(--bg-card);border:1px solid var(--border);border-radius:14px;
+    padding:26px;text-align:center;transition:transform .2s,border-color .2s;
+  }
+  .stat-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .stat-card .num{font-size:1.6rem;font-weight:700;color:var(--accent-2);margin-bottom:6px}
+  .stat-card .label{color:var(--text-dim);font-size:.9rem}
+
+  /* EXPERIENCE */
+  .exp-group{max-width:760px;margin:0 auto}
+  .exp-card{
+    background:var(--bg-card);border:1px solid var(--border);border-radius:16px;
+    padding:30px;
+  }
+  .exp-company{color:var(--accent-2);font-weight:600;font-size:1.05rem;margin-bottom:4px}
+  .exp-location{color:var(--text-dim);font-size:.9rem;margin-bottom:24px}
+  .exp-role + .exp-role{margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+  .exp-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .exp-head h3{font-size:1.25rem}
+  .exp-head .role-type{color:var(--text-dim);font-size:.9rem;margin-top:2px}
+  .exp-head .date{color:var(--text-dim);font-size:.9rem;white-space:nowrap}
+  .exp-card ul{list-style:none}
+  .exp-card li{padding-left:22px;position:relative;color:var(--text-dim);margin-bottom:10px}
+  .exp-card li::before{content:"▹";position:absolute;left:0;color:var(--accent-2)}
+
+  /* PROJECTS */
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+  .proj-card{
+    background:var(--bg-card);border:1px solid var(--border);border-radius:16px;
+    padding:28px;transition:transform .2s,border-color .2s;display:flex;flex-direction:column;
+  }
+  .proj-card:hover{transform:translateY(-6px);border-color:var(--accent)}
+  .proj-card .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .proj-card h3{font-size:1.25rem}
+  .proj-card .links{display:flex;gap:14px}
+  .proj-card .links a{color:var(--text-dim);font-size:.85rem;font-weight:600;transition:color .2s}
+  .proj-card .links a:hover{color:var(--accent-2)}
+  .proj-card p{color:var(--text-dim);font-size:.95rem;flex:1;margin-bottom:16px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{
+    font-size:.75rem;padding:4px 12px;border-radius:999px;
+    background:var(--bg-card-2);color:var(--accent-2);border:1px solid var(--border);
+  }
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .skill-box{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:24px}
+  .skill-box h4{margin-bottom:14px;color:var(--accent-2);font-size:1rem}
+  .skill-box .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:.85rem;padding:6px 14px;border-radius:8px;background:var(--bg-card-2);border:1px solid var(--border)}
+
+  /* EDUCATION */
+  .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:760px;margin:0 auto}
+  .edu-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:24px}
+  .edu-card h4{font-size:1.1rem;margin-bottom:4px}
+  .edu-card .school{color:var(--accent-2);font-size:.95rem;margin-bottom:6px}
+  .edu-card .date{color:var(--text-dim);font-size:.85rem}
+
+  /* CONTACT */
+  #contact{text-align:center}
+  #contact p{color:var(--text-dim);max-width:520px;margin:0 auto 28px}
+  .social{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+  .social a{
+    padding:12px 22px;border:1px solid var(--border);border-radius:10px;
+    color:var(--text-dim);font-weight:600;transition:all .2s;
+  }
+  .social a:hover{border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px)}
+
+  footer{text-align:center;padding:30px;color:var(--text-dim);font-size:.85rem;border-top:1px solid var(--border)}
+
+  /* animations */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.show{opacity:1;transform:none}
+
+  /* responsive */
+  @media(max-width:768px){
+    .nav-links{
+      display:none;position:absolute;top:64px;left:0;right:0;
+      flex-direction:column;gap:0;background:var(--bg-card);border-bottom:1px solid var(--border);
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{padding:16px 24px;border-top:1px solid var(--border)}
+    .menu-btn{display:block}
+    .hero-text h1{font-size:2.3rem}
+    .hero{flex-direction:column-reverse;text-align:center}
+    .hero-text p{margin-left:auto;margin-right:auto}
+    .btn-group{justify-content:center}
+    .hero-img .frame{width:240px;height:290px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="container">
+    <div class="logo">Asad<span>.</span>Jafri</div>
+    <button class="menu-btn" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header>
+  <div class="container hero">
+    <div class="hero-text">
+      <span class="badge">● Software Developer @ Neospark Solutions</span>
+      <h1>Hi, I'm <span class="grad">Asad Jafri</span><br>Software Engineer</h1>
+      <p>Software Engineering student and competitive programmer with 600+ DSA problems solved. I build scalable full-stack and backend systems with Python, FastAPI, C++, and JavaScript — with a strong interest in AI/ML and distributed applications.</p>
+      <div class="btn-group">
+        <a class="btn btn-primary" href="#projects">View My Work</a>
+        <a class="btn btn-outline" href="#contact">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="frame">
+        <img src="images/profile.png" alt="Asad Jafri">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title reveal">About <span>Me</span></h2>
+    <p class="section-sub reveal">A little background on who I am and what I do</p>
+    <div class="exp-card reveal" style="text-align:center">
+      <p style="color:var(--text-dim)">
+        I'm a Computer Science student at FAST NUCES, Karachi, passionate about building robust software.
+        I love competitive programming (600+ problems solved on Codeforces & LeetCode) and turning ideas into
+        real, deployed products — from blockchain ticketing platforms to AI-powered knowledge tools.
+        I focus on writing scalable, clean, and performant code.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <h2 class="section-title reveal">Achievements</h2>
+    <p class="section-sub reveal">Some milestones I'm proud of</p>
+    <div class="stats">
+      <div class="stat-card reveal"><div class="num">600+</div><div class="label">DSA Problems Solved</div></div>
+      <div class="stat-card reveal"><div class="num">🥉 Bronze</div><div class="label">ICPC Regionals Medalist</div></div>
+      <div class="stat-card reveal"><div class="num">🏆 Winner</div><div class="label">Vibe Coding (IBA Probattle)</div></div>
+      <div class="stat-card reveal"><div class="num">2X Runner-up</div><div class="label">Coders Cup (2024, 2025)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title reveal">Experience</h2>
+    <p class="section-sub reveal">Where I've been working</p>
+    <div class="exp-group reveal">
+      <div class="exp-card">
+        <div class="exp-company">Neospark Solutions</div>
+        <div class="exp-location">Australia · Remote</div>
+
+        <div class="exp-role">
+          <div class="exp-head">
+            <div>
+              <h3>Software Developer</h3>
+              <div class="role-type">Full-time</div>
+            </div>
+            <div class="date">Jun 2026 – Present</div>
+          </div>
+          <ul>
+            <li>Software development practices in Western business environments.</li>
+            <li>End-to-end software development lifecycle from concept to release.</li>
+            <li>Building and shipping production backend services with Python and FastAPI.</li>
+          </ul>
+        </div>
+
+        <div class="exp-role">
+          <div class="exp-head">
+            <div>
+              <h3>Software Development Intern</h3>
+              <div class="role-type">Internship</div>
+            </div>
+            <div class="date">Nov 2025 – Jun 2026</div>
+          </div>
+          <ul>
+            <li>Enhanced backend functionality within an existing application as part of the software development process.</li>
+            <li>Designed REST APIs, real-time SSE pipelines, and AI-based automation workflows.</li>
+            <li>Integrated file processing systems with cloud storage solutions.</li>
+            <li>Worked with MongoDB, authentication systems, and admin dashboards.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title reveal">Featured <span>Projects</span></h2>
+    <p class="section-sub reveal">Things I've designed and built</p>
+    <div class="projects">
+
+      <div class="proj-card reveal">
+        <div class="top">
+          <h3>ChainPass</h3>
+          <div class="links">
+            <a href="#" target="_blank">Live ↗</a>
+            <a href="https://github.com/Asadjafri9" target="_blank">GitHub ↗</a>
+          </div>
+        </div>
+        <p>A decentralized ticketing platform with ERC-721 soulbound NFTs and identity-based fraud prevention. Smart contracts use role-based access control and on-chain verification, with QR-based ticket validation.</p>
+        <div class="tags">
+          <span class="tag">Solidity</span><span class="tag">Hardhat</span>
+          <span class="tag">Ethers.js</span><span class="tag">Next.js</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="top">
+          <h3>SyncScript</h3>
+          <div class="links">
+            <a href="#" target="_blank">Live ↗</a>
+            <a href="https://github.com/Asadjafri9" target="_blank">GitHub ↗</a>
+          </div>
+        </div>
+        <p>An AI knowledge platform for document search with an AI-powered chat system. Features real-time collaboration with RBAC and Google Gemini AI using RAG for semantic search and responses.</p>
+        <div class="tags">
+          <span class="tag">Next.js</span><span class="tag">TypeScript</span>
+          <span class="tag">Supabase</span><span class="tag">Gemini AI</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="top">
+          <h3>CircleOne</h3>
+          <div class="links">
+            <a href="https://github.com/Asadjafri9" target="_blank">GitHub ↗</a>
+          </div>
+        </div>
+        <p>A Flask web app with Google OAuth, a business directory, and professional profiles. Responsive UI with dark/light themes and cloud media integration.</p>
+        <div class="tags">
+          <span class="tag">Flask</span><span class="tag">Python</span>
+          <span class="tag">Google OAuth</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title reveal">Skills & <span>Tools</span></h2>
+    <p class="section-sub reveal">Technologies I work with</p>
+    <div class="skills-grid">
+      <div class="skill-box reveal">
+        <h4>Languages</h4>
+        <div class="chips"><span class="chip">C++</span><span class="chip">Python</span><span class="chip">JavaScript</span></div>
+      </div>
+      <div class="skill-box reveal">
+        <h4>Frameworks</h4>
+        <div class="chips"><span class="chip">FastAPI</span><span class="chip">Flask</span><span class="chip">React</span><span class="chip">Next.js</span></div>
+      </div>
+      <div class="skill-box reveal">
+        <h4>Databases</h4>
+        <div class="chips"><span class="chip">MongoDB</span><span class="chip">MySQL</span><span class="chip">SQLite</span></div>
+      </div>
+      <div class="skill-box reveal">
+        <h4>Tools</h4>
+        <div class="chips"><span class="chip">Git</span><span class="chip">Linux</span><span class="chip">VS Code</span><span class="chip">Postman</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <h2 class="section-title reveal">Education</h2>
+    <p class="section-sub reveal">My academic background</p>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <h4>BS Computer Science</h4>
+        <div class="school">FAST NUCES, Karachi</div>
+        <div class="date">2023 – 2027</div>
+      </div>
+      <div class="edu-card reveal">
+        <h4>Intermediate (Pre-Engineering)</h4>
+        <div class="school">Govt. Degree College, Malir Cantt</div>
+        <div class="date">2021 – 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title reveal">Get In <span>Touch</span></h2>
+    <p class="reveal">I'm always open to discussing new projects, opportunities, or collaborations. Feel free to reach out!</p>
+    <div class="social reveal">
+      <a href="mailto:asadjaffri79315@gmail.com">✉ Email</a>
+      <a href="https://linkedin.com/in/s-m-asadjafri" target="_blank">in LinkedIn</a>
+      <a href="https://github.com/Asadjafri9" target="_blank">⌨ GitHub</a>
+      <a href="tel:03363066119">📞 0336 3066119</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Asad Jafri · Built with passion 💙
+</footer>
+
+<script>
+  // current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // scroll reveal animation
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+  },{threshold:0.12});
+  reveals.forEach(r=>obs.observe(r));
+
+  // close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
