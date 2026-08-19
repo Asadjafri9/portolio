@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>Asad Jafri — Software Engineer</title>
 <meta name="description" content="Asad Jafri — Software Engineering student, competitive programmer, and full-stack developer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -413,56 +414,75 @@
     .about-meta{grid-template-columns:1fr 1fr}
   }
   @media(max-width:768px){
-    .wrap{padding:0 24px;grid-template-columns:1fr;gap:0}
+    .wrap{padding:0 24px;display:block}
     nav .nav-inner{padding:0 24px;height:56px}
     .nav-links{display:none}
     .menu-btn{display:block}
-    header{padding:80px 0 60px;min-height:auto}
-    .hero-grid{grid-column:1;gap:32px}
-    .hero-img{grid-column:1;margin-top:0;padding-top:0}
-    .hero-img .frame{max-width:180px}
-    .hero-title{font-size:clamp(2rem,8vw,3rem)}
+    header{padding:100px 0 60px;min-height:auto}
+    .hero-grid{grid-column:1;gap:24px}
+    .hero-img{grid-column:1;margin:0 auto;padding-top:0;order:-1}
+    .hero-img .frame{max-width:220px;margin:0 auto}
+    .hero-eyebrow{font-size:.75rem}
+    .hero-title{font-size:clamp(1.8rem,8vw,2.8rem)}
     .hero-desc{font-size:1rem}
+    .hero-cta{flex-wrap:wrap}
     .section-label,.section-content{grid-column:1}
     .section-label{margin-bottom:16px;padding-top:0}
-    .section-heading{font-size:clamp(1.5rem,6vw,2.2rem);margin-bottom:24px}
-    section{padding:64px 0}
+    .section-heading{font-size:clamp(1.4rem,6vw,2rem);margin-bottom:20px}
+    section{padding:56px 0}
     .stats{grid-template-columns:1fr 1fr}
     .stat{padding:24px 20px}
-    .stat .num{font-size:2rem}
+    .stat .num{font-size:1.8rem}
     .skills-grid{grid-template-columns:1fr 1fr}
     .skill-block{padding:24px 20px}
     .about-meta{grid-template-columns:1fr;gap:20px}
-    .exp-item{padding:28px 0}
+    .about-text{font-size:1rem}
+    .exp-item{padding:24px 0}
     .exp-item-head{flex-direction:column;gap:4px}
-    .exp-item-head h3{font-size:1.1rem}
-    .exp-item li{font-size:.88rem}
+    .exp-item-head h3{font-size:1.05rem}
+    .exp-item li{font-size:.85rem}
     .proj-item{grid-template-columns:1fr;gap:12px;padding:24px 0}
-    .proj-name{font-size:1.25rem}
-    .proj-desc{font-size:.88rem}
+    .proj-name{font-size:1.2rem}
+    .proj-desc{font-size:.85rem}
     .proj-right{flex-direction:row;align-items:center;gap:20px}
     .proj-arrow{display:none}
     .edu-item{flex-direction:column;gap:4px}
-    #contact{padding:80px 0}
-    #contact .section-content h2{font-size:clamp(1.8rem,8vw,3rem)}
+    .edu-item .edu-degree{font-size:1rem}
+    #contact{padding:72px 0}
+    #contact .section-content h2{font-size:clamp(1.6rem,8vw,2.5rem)}
     .contact-link .cl-name{font-size:1rem}
     footer .wrap{flex-direction:column;gap:12px;text-align:center}
   }
   @media(max-width:480px){
     .wrap{padding:0 20px}
     nav .nav-inner{padding:0 20px}
-    .hero-title{font-size:clamp(1.8rem,9vw,2.5rem)}
-    .hero-eyebrow{font-size:.72rem}
+    header{padding:90px 0 48px}
+    .hero-grid{gap:20px}
+    .hero-img .frame{max-width:180px}
+    .hero-title{font-size:clamp(1.6rem,9vw,2.2rem)}
+    .hero-eyebrow{font-size:.7rem}
     .hero-cta{flex-direction:column}
     .btn{width:100%;justify-content:center}
     .stats{grid-template-columns:1fr}
+    .stat{padding:20px 16px}
+    .stat .num{font-size:1.6rem}
     .skills-grid{grid-template-columns:1fr}
+    .skill-block{padding:20px 16px}
     .about-meta{grid-template-columns:1fr}
-    .proj-tags{gap:4px}
-    .proj-tag{font-size:.68rem;padding:3px 8px}
-    .skill-pill{font-size:.8rem;padding:5px 12px}
-    .menu-overlay a{font-size:1.3rem}
-    .menu-overlay{gap:20px}
+    .about-text{font-size:.95rem}
+    .section-heading{font-size:clamp(1.3rem,7vw,1.8rem);margin-bottom:16px}
+    section{padding:48px 0}
+    .exp-item{padding:20px 0}
+    .exp-item-head h3{font-size:1rem}
+    .exp-item li{font-size:.82rem}
+    .proj-item{padding:20px 0}
+    .proj-name{font-size:1.1rem}
+    .proj-desc{font-size:.82rem}
+    .proj-tag{font-size:.65rem;padding:3px 8px}
+    .skill-pill{font-size:.78rem;padding:5px 12px}
+    .contact-link .cl-name{font-size:.95rem}
+    .menu-overlay a{font-size:1.2rem}
+    .menu-overlay{gap:18px}
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -659,11 +679,11 @@
             <p class="proj-desc">An AI knowledge platform for document search with an AI-powered chat system. Features real-time collaboration with RBAC and Google Gemini AI using RAG for semantic search and responses.</p>
             <div class="proj-tags">
               <span class="proj-tag">Next.js</span><span class="proj-tag">TypeScript</span>
-              <span class="proj-tag">Supabase</span><span class="proj-tag">Gemini AI</span>
+              <span class="proj-tag">PostgreSQL</span><span class="proj-tag">Gemini AI</span>
             </div>
           </div>
           <div class="proj-right">
-            <a class="proj-link" href="#" target="_blank">Live ↗</a>
+            <a class="proj-link" href="https://syncscript-production-c11f.up.railway.app" target="_blank">Live ↗</a>
             <a class="proj-link" href="https://github.com/Asadjafri9" target="_blank">GitHub ↗</a>
           </div>
           <div class="proj-arrow">→</div>
