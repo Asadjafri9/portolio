@@ -338,7 +338,7 @@
   }
   .marquee::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent)}
   .marquee::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent)}
-  .marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite}
+  .marquee-track{display:flex;width:max-content;animation:marquee 42s linear infinite}
   .marquee:hover .marquee-track{animation-play-state:paused}
   .marquee-set{display:flex;align-items:center;flex:none}
   .marquee-set span{
@@ -591,6 +591,7 @@
 
   /* ---------- skills ---------- */
   .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .skill-block.wide{grid-column:1/-1}
   .skill-block{
     background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 30px;
     position:relative;overflow:hidden;transition:border-color .35s ease,transform .4s var(--ease);
@@ -834,7 +835,10 @@
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track" id="marqueeTrack">
     <div class="marquee-set">
-      <span>Python</span><i>✦</i><span>FastAPI</span><i>✦</i><span>TypeScript</span><i>✦</i><span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>C++</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>MongoDB</span><i>✦</i><span>AI / ML</span><i>✦</i><span>Gemini</span><i>✦</i><span>Solidity</span><i>✦</i><span>Docker</span><i>✦</i><span>Linux</span><i>✦</i>
+      <span>Python</span><i>✦</i><span>FastAPI</span><i>✦</i><span>TypeScript</span><i>✦</i><span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>C++</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>MongoDB</span><i>✦</i><span>AI / ML</span><i>✦</i><span>Gemini</span><i>✦</i><span>Solidity</span><i>✦</i><span>Docker</span><i>✦</i><span>Linux</span><i>✦</i><span>Claude Code</span><i>✦</i><span>Cursor</span><i>✦</i><span>Windsurf</span><i>✦</i><span>Copilot</span><i>✦</i><span>Codex</span><i>✦</i><span>Devin</span><i>✦</i>
+    </div>
+    <div class="marquee-set" aria-hidden="true">
+      <span>Python</span><i>✦</i><span>FastAPI</span><i>✦</i><span>TypeScript</span><i>✦</i><span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>C++</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>MongoDB</span><i>✦</i><span>AI / ML</span><i>✦</i><span>Gemini</span><i>✦</i><span>Solidity</span><i>✦</i><span>Docker</span><i>✦</i><span>Linux</span><i>✦</i><span>Claude Code</span><i>✦</i><span>Cursor</span><i>✦</i><span>Windsurf</span><i>✦</i><span>Copilot</span><i>✦</i><span>Codex</span><i>✦</i><span>Devin</span><i>✦</i>
     </div>
   </div>
 </div>
@@ -1234,6 +1238,12 @@
         <h4>AI &amp; Workflow</h4>
         <div class="skill-items">
           <span class="skill-pill">Gemini API</span><span class="skill-pill">RAG</span><span class="skill-pill">OpenRouter</span><span class="skill-pill">Git</span><span class="skill-pill">CI/CD</span><span class="skill-pill">Postman</span>
+        </div>
+      </div>
+      <div class="skill-block wide spotlight reveal" style="--d:.24s">
+        <h4>AI Coding Agents — daily drivers</h4>
+        <div class="skill-items">
+          <span class="skill-pill">Claude Code</span><span class="skill-pill">Cursor</span><span class="skill-pill">Windsurf</span><span class="skill-pill">GitHub Copilot</span><span class="skill-pill">Codex</span><span class="skill-pill">OpenCode</span><span class="skill-pill">Devin</span>
         </div>
       </div>
     </div>
