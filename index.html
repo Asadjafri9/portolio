@@ -650,7 +650,28 @@
     font-size:clamp(2.2rem,5.4vw,4rem);font-weight:800;letter-spacing:-.035em;line-height:1.06;margin-bottom:20px;
   }
   .contact-title .am{color:var(--amber);text-shadow:0 0 40px rgba(244,163,64,.3)}
-  .contact-text{font-size:1.05rem;color:var(--dim);max-width:52ch;margin:0 auto 44px;line-height:1.75}
+  .contact-text{font-size:1.05rem;color:var(--dim);max-width:52ch;margin:0 auto 34px;line-height:1.75}
+  .resume-banner{
+    display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;
+    margin-bottom:18px;padding:24px 28px;border-radius:16px;text-align:left;
+    border:1px solid rgba(244,163,64,.28);
+    background:linear-gradient(120deg,rgba(244,163,64,.09),rgba(185,120,53,.04) 60%,transparent);
+    position:relative;overflow:hidden;transition:border-color .3s ease,transform .4s var(--ease);
+  }
+  .resume-banner::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:linear-gradient(180deg,var(--amber),var(--bronze));
+  }
+  .resume-banner:hover{border-color:rgba(244,163,64,.5);transform:translateY(-2px)}
+  .rb-left{display:flex;align-items:center;gap:16px}
+  .rb-ico{
+    width:46px;height:46px;border-radius:12px;display:grid;place-items:center;flex:none;
+    font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.06em;color:#131008;
+    background:linear-gradient(135deg,var(--amber-hi),var(--amber));box-shadow:0 6px 20px rgba(244,163,64,.25);
+  }
+  .rb-title{font-size:1.05rem;font-weight:700;letter-spacing:-.01em}
+  .rb-sub{font-family:var(--mono);font-size:.68rem;color:var(--dim);margin-top:3px;letter-spacing:.05em}
+  .rb-actions{display:flex;gap:11px;flex-wrap:wrap}
   .contact-links{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;text-align:left}
   .contact-link{
     display:flex;justify-content:space-between;align-items:center;gap:14px;
@@ -738,6 +759,9 @@
     .filters{gap:7px}
     .filter-btn{padding:8px 14px;font-size:.68rem}
     .menu-overlay a{font-size:1.35rem}
+    .resume-banner{flex-direction:column;align-items:flex-start;padding:20px 22px}
+    .rb-actions{width:100%}
+    .rb-actions .btn{flex:1;justify-content:center}
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -780,6 +804,7 @@
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="Asad_Jafri_Resume.pdf" download="Asad_Jafri_Resume.pdf">Resume ↓</a>
       <a href="#contact" class="nav-cta">Let's talk</a>
     </div>
   </div>
@@ -792,6 +817,7 @@
   <a href="#projects">Projects</a>
   <a href="#skills">Skills</a>
   <a href="#contact">Contact</a>
+  <a href="Asad_Jafri_Resume.pdf" download="Asad_Jafri_Resume.pdf">Resume ↓</a>
 </div>
 
 <!-- HERO -->
@@ -817,6 +843,7 @@
         </p>
         <div class="hero-cta reveal" style="--d:.4s">
           <a class="btn btn-primary magnetic" href="#projects">View my work <span class="arr">→</span></a>
+          <a class="btn btn-ghost magnetic" href="Asad_Jafri_Resume.pdf" download="Asad_Jafri_Resume.pdf">Resume <span class="arr">↓</span></a>
           <a class="btn btn-ghost magnetic" href="#contact">Contact me</a>
         </div>
       </div>
@@ -1288,6 +1315,19 @@
       <p class="contact-text reveal" style="--d:.12s">
         Open to full-time roles, freelance projects, and collaborations. Whether it's a backend system, an AI product, or a competitive team — my inbox is open.
       </p>
+      <div class="resume-banner spotlight reveal" style="--d:.15s">
+        <div class="rb-left">
+          <span class="rb-ico">PDF</span>
+          <div>
+            <div class="rb-title">Prefer the formal version?</div>
+            <div class="rb-sub">Asad_Jafri_Resume.pdf · 71 KB · one click, no forms</div>
+          </div>
+        </div>
+        <div class="rb-actions">
+          <a class="btn btn-primary magnetic" href="Asad_Jafri_Resume.pdf" download="Asad_Jafri_Resume.pdf">Download PDF <span class="arr">↓</span></a>
+          <a class="btn btn-ghost magnetic" href="Asad_Jafri_Resume.pdf" target="_blank" rel="noopener">Open <span class="arr">↗</span></a>
+        </div>
+      </div>
       <div class="contact-links">
         <a class="contact-link spotlight reveal" style="--d:.16s" href="mailto:asadjaffri79315@gmail.com">
           <span class="cl-left">
