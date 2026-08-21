@@ -7,6 +7,19 @@
 <title>Asad Jafri — Software Engineer</title>
 <meta name="description" content="Asad Jafri — Software engineer, competitive programmer, and full-stack developer building software & intelligent systems. Python, FastAPI, React, AI/ML.">
 <meta name="theme-color" content="#050708">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://asadjafri.me/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://asadjafri.me/">
+<meta property="og:title" content="Asad Jafri — Software Engineer">
+<meta property="og:description" content="Software engineer, ICPC bronze medalist & full-stack developer building software & intelligent systems. Python · FastAPI · React · AI/ML.">
+<meta property="og:image" content="https://asadjafri.me/images/profile.jpg">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="900">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Asad Jafri — Software Engineer">
+<meta name="twitter:description" content="Software engineer, ICPC bronze medalist & full-stack developer building software & intelligent systems.">
+<meta name="twitter:image" content="https://asadjafri.me/images/profile.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -43,6 +56,7 @@
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
   ::selection{background:rgba(244,163,64,.28);color:#fff}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
 
   /* ---------- scrollbars ---------- */
   ::-webkit-scrollbar{width:10px}
@@ -479,14 +493,17 @@
     border-color:transparent;font-weight:600;box-shadow:0 6px 22px rgba(244,163,64,.25);
   }
   .filter-btn.active .cnt{color:rgba(19,16,8,.65)}
-  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;perspective:1400px}
+  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;perspective:1400px;position:relative}
   .proj-card{
     position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;
     overflow:hidden;display:flex;flex-direction:column;
-    transition:opacity .4s var(--ease),transform .5s var(--ease),border-color .35s ease,box-shadow .45s ease;
+    transition:opacity .4s var(--ease),transform .5s var(--ease),border-color .35s ease,box-shadow .45s ease,visibility 0s 0s;
     transform-style:preserve-3d;will-change:transform;
   }
-  .proj-card.hidden-f{opacity:0;transform:scale(.94) translateY(10px);pointer-events:none;position:absolute;visibility:hidden}
+  .proj-card.hidden-f{
+    opacity:0;transform:scale(.94) translateY(10px);pointer-events:none;position:absolute;visibility:hidden;
+    transition:opacity .35s var(--ease),transform .35s var(--ease),visibility 0s .4s;
+  }
   .proj-card::after{
     content:"";position:absolute;inset:0;opacity:0;transition:opacity .4s ease;pointer-events:none;z-index:3;
     background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%),rgba(244,163,64,.09),transparent 45%);
@@ -498,6 +515,7 @@
     border:1px solid var(--line-hi);border-bottom:none;border-radius:12px 12px 0 0;
     background:#101517;overflow:hidden;
   }
+  .browser-link{display:block;color:inherit;cursor:pointer}
   .browser-bar{
     display:flex;align-items:center;gap:8px;padding:9px 13px;
     background:#0B0F10;border-bottom:1px solid var(--line);
@@ -726,6 +744,10 @@
     #cursor-glow,#embers{display:none}
   }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Asad Jafri","jobTitle":"Software Developer","url":"https://asadjafri.me/","email":"mailto:asadjaffri79315@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Karachi","addressCountry":"PK"},"sameAs":["https://github.com/Asadjafri9","https://linkedin.com/in/s-m-asadjafri"],"alumniOf":{"@type":"CollegeOrUniversity","name":"FAST NUCES, Karachi"},"knowsAbout":["Python","FastAPI","React","TypeScript","C++","Artificial Intelligence","Competitive Programming","Blockchain"]}
+</script>
+<noscript><style>#preloader{display:none}.reveal{opacity:1;transform:none}body.locked{overflow:auto}</style></noscript>
 </head>
 <body class="locked">
 
@@ -795,7 +817,7 @@
       <div class="hero-figure">
         <div class="hero-ring"></div>
         <div class="hero-frame">
-          <img src="images/profile.jpg" alt="Asad Jafri — illustrated portrait" width="900" height="900">
+          <img src="images/profile.jpg" alt="Asad Jafri — illustrated portrait" width="900" height="900" decoding="async">
         </div>
         <div class="chip chip-1"><span class="ico">◆</span><b>600+</b>&nbsp;problems solved</div>
         <div class="chip chip-2"><span class="ico">★</span><b>ICPC</b>&nbsp;bronze medalist</div>
@@ -963,10 +985,10 @@
     </div>
 
     <div class="filters reveal" id="filters">
-      <button class="filter-btn active" data-filter="all">All <span class="cnt">6</span></button>
-      <button class="filter-btn" data-filter="web">Web Platforms <span class="cnt">4</span></button>
-      <button class="filter-btn" data-filter="ai">AI-Powered <span class="cnt">3</span></button>
-      <button class="filter-btn" data-filter="chain">Blockchain <span class="cnt">1</span></button>
+      <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All <span class="cnt">6</span></button>
+      <button type="button" class="filter-btn" data-filter="web" aria-pressed="false">Web Platforms <span class="cnt">4</span></button>
+      <button type="button" class="filter-btn" data-filter="ai" aria-pressed="false">AI-Powered <span class="cnt">3</span></button>
+      <button type="button" class="filter-btn" data-filter="chain" aria-pressed="false">Blockchain <span class="cnt">1</span></button>
     </div>
 
     <div class="proj-grid" id="projGrid">
@@ -974,6 +996,7 @@
       <!-- EVENTHUB -->
       <article class="proj-card spotlight reveal tilt" data-cat="web">
         <div class="proj-shot">
+          <a class="browser-link" href="https://eventhub-app-production.up.railway.app" target="_blank" rel="noopener noreferrer" title="Open live site" aria-label="Open EventHub live site">
           <div class="browser">
             <div class="browser-bar">
               <span class="b-dot r"></span><span class="b-dot y"></span><span class="b-dot g"></span>
@@ -981,9 +1004,10 @@
             </div>
             <div class="browser-body">
               <span class="proj-live-pill"><span class="pulse-dot"></span>LIVE</span>
-              <img src="images/projects/eventhub.jpg" alt="EventHub — event discovery platform screenshot" loading="lazy">
+              <img src="images/projects/eventhub.jpg" alt="EventHub — event discovery platform screenshot" loading="lazy" decoding="async">
             </div>
           </div>
+          </a>
         </div>
         <div class="proj-info">
           <div class="proj-top">
@@ -1001,8 +1025,9 @@
       </article>
 
       <!-- KHATALENS -->
-      <article class="proj-card spotlight reveal tilt" style="--d:.06s" data-cat="ai">
+      <article class="proj-card spotlight reveal tilt" data-cat="ai" style="--d:.06s">
         <div class="proj-shot">
+          <a class="browser-link" href="https://khatalens.up.railway.app" target="_blank" rel="noopener noreferrer" title="Open live site" aria-label="Open KhataLens live site">
           <div class="browser">
             <div class="browser-bar">
               <span class="b-dot r"></span><span class="b-dot y"></span><span class="b-dot g"></span>
@@ -1010,9 +1035,10 @@
             </div>
             <div class="browser-body">
               <span class="proj-live-pill"><span class="pulse-dot"></span>LIVE</span>
-              <img src="images/projects/khatalens.jpg" alt="KhataLens — AI ledger management screenshot" loading="lazy">
+              <img src="images/projects/khatalens.jpg" alt="KhataLens — AI ledger management screenshot" loading="lazy" decoding="async">
             </div>
           </div>
+          </a>
         </div>
         <div class="proj-info">
           <div class="proj-top">
@@ -1036,6 +1062,7 @@
       <!-- CHAINPASS -->
       <article class="proj-card spotlight reveal tilt" data-cat="chain">
         <div class="proj-shot">
+          <a class="browser-link" href="https://chain-pass-psl.vercel.app" target="_blank" rel="noopener noreferrer" title="Open live site" aria-label="Open ChainPass live site">
           <div class="browser">
             <div class="browser-bar">
               <span class="b-dot r"></span><span class="b-dot y"></span><span class="b-dot g"></span>
@@ -1043,9 +1070,10 @@
             </div>
             <div class="browser-body">
               <span class="proj-live-pill"><span class="pulse-dot"></span>LIVE</span>
-              <img src="images/projects/chainpass.jpg" alt="ChainPass — blockchain ticketing screenshot" loading="lazy">
+              <img src="images/projects/chainpass.jpg" alt="ChainPass — blockchain ticketing screenshot" loading="lazy" decoding="async">
             </div>
           </div>
+          </a>
         </div>
         <div class="proj-info">
           <div class="proj-top">
@@ -1067,8 +1095,9 @@
       </article>
 
       <!-- CIRCLEONE -->
-      <article class="proj-card spotlight reveal tilt" style="--d:.06s" data-cat="web">
+      <article class="proj-card spotlight reveal tilt" data-cat="web" style="--d:.06s">
         <div class="proj-shot">
+          <a class="browser-link" href="https://circleone-production.up.railway.app" target="_blank" rel="noopener noreferrer" title="Open live site" aria-label="Open CircleOne live site">
           <div class="browser">
             <div class="browser-bar">
               <span class="b-dot r"></span><span class="b-dot y"></span><span class="b-dot g"></span>
@@ -1076,9 +1105,10 @@
             </div>
             <div class="browser-body">
               <span class="proj-live-pill"><span class="pulse-dot"></span>LIVE</span>
-              <img src="images/projects/circleone.jpg" alt="CircleOne — networking and directory platform screenshot" loading="lazy">
+              <img src="images/projects/circleone.jpg" alt="CircleOne — networking and directory platform screenshot" loading="lazy" decoding="async">
             </div>
           </div>
+          </a>
         </div>
         <div class="proj-info">
           <div class="proj-top">
@@ -1098,6 +1128,7 @@
       <!-- SYNCSCRIPT -->
       <article class="proj-card spotlight reveal tilt" data-cat="web ai">
         <div class="proj-shot">
+          <a class="browser-link" href="https://syncscript-collaboration.up.railway.app/" target="_blank" rel="noopener noreferrer" title="Open live site" aria-label="Open SyncScript live site">
           <div class="browser">
             <div class="browser-bar">
               <span class="b-dot r"></span><span class="b-dot y"></span><span class="b-dot g"></span>
@@ -1105,9 +1136,10 @@
             </div>
             <div class="browser-body">
               <span class="proj-live-pill"><span class="pulse-dot"></span>LIVE</span>
-              <img src="images/projects/syncscript.jpg" alt="SyncScript — collaborative research platform screenshot" loading="lazy">
+              <img src="images/projects/syncscript.jpg" alt="SyncScript — collaborative research platform screenshot" loading="lazy" decoding="async">
             </div>
           </div>
+          </a>
         </div>
         <div class="proj-info">
           <div class="proj-top">
@@ -1129,8 +1161,9 @@
       </article>
 
       <!-- STANDUPBOT -->
-      <article class="proj-card spotlight reveal tilt" style="--d:.06s" data-cat="web ai">
+      <article class="proj-card spotlight reveal tilt" data-cat="web ai" style="--d:.06s">
         <div class="proj-shot">
+          <a class="browser-link" href="https://teamstandup-production.up.railway.app" target="_blank" rel="noopener noreferrer" title="Open live site" aria-label="Open StandupBot live site">
           <div class="browser">
             <div class="browser-bar">
               <span class="b-dot r"></span><span class="b-dot y"></span><span class="b-dot g"></span>
@@ -1138,9 +1171,10 @@
             </div>
             <div class="browser-body">
               <span class="proj-live-pill"><span class="pulse-dot"></span>LIVE</span>
-              <img src="images/projects/teamstandup.jpg" alt="StandupBot — async standups platform screenshot" loading="lazy">
+              <img src="images/projects/teamstandup.jpg" alt="StandupBot — async standups platform screenshot" loading="lazy" decoding="async">
             </div>
           </div>
+          </a>
         </div>
         <div class="proj-info">
           <div class="proj-top">
@@ -1347,6 +1381,17 @@
       menuBtn.textContent = "☰";
       document.body.classList.remove("locked");
     });
+  });
+  function closeMenu(){
+    menuOverlay.classList.remove("open");
+    menuBtn.textContent = "☰";
+    document.body.classList.remove("locked");
+  }
+  window.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && menuOverlay.classList.contains("open")) closeMenu();
+  });
+  window.addEventListener("resize", function(){
+    if (window.innerWidth > 768 && menuOverlay.classList.contains("open")) closeMenu();
   });
 
   /* ---------- active nav link ---------- */
@@ -1560,8 +1605,9 @@
   var projCards = document.querySelectorAll(".proj-card");
   filterBtns.forEach(function(btn){
     btn.addEventListener("click", function(){
-      filterBtns.forEach(function(b){ b.classList.remove("active"); });
+      filterBtns.forEach(function(b){ b.classList.remove("active"); b.setAttribute("aria-pressed", "false"); });
       btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
       var f = btn.dataset.filter;
       projCards.forEach(function(card){
         var match = f === "all" || (card.dataset.cat || "").split(" ").indexOf(f) !== -1;
